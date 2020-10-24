@@ -107,12 +107,24 @@ namespace ProjetWPF
 
         private void lvCaves_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // A vous de jouer
+            if(lvCaves.SelectedItem != null)
+            {
+                lvBouteilles.ItemsSource = gst.LesCaves[lvCaves.SelectedItem as string];
+                txtNbBouteilles.Text = gst.NbBouteilles(lvCaves.SelectedItem as string).ToString();
+                txtNbBouteillesDeRouges.Text = gst.NbBouteillesDeRouges(lvCaves.SelectedItem as string).ToString();
+                txtValeurDeLaCave.Text = gst.ValeurDeLaCave(lvCaves.SelectedItem as string).ToString();
+            }
         }
 
         private void lvBouteilles_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // A vous de jouer
+            if(lvBouteilles.SelectedItem != null)
+            {
+                txtMillesime.Text = (lvBouteilles.SelectedItem as Bouteille).LeVin.MillesimeVin.ToString();
+                txtNomCepage.Text = (lvBouteilles.SelectedItem as Bouteille).LeVin.LeCepage.NomCepage;
+                txtCouleur.Text = (lvBouteilles.SelectedItem as Bouteille).LeVin.LaCouleur.NomCouleur;
+                txtPrix.Text = (lvBouteilles.SelectedItem as Bouteille).LeVin.PrixDuVin.ToString();
+            }
         }
     }
 }

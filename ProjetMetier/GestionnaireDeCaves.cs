@@ -36,7 +36,7 @@ namespace ProjetMetier
             int nbBouteilleRouge = 0;
             foreach(Bouteille bou in LesCaves[unNomDeCave])
             {
-                if(bou.LeVin.LaCouleur.NomCouleur == "rouge")
+                if(bou.LeVin.LaCouleur.NomCouleur == "Rouge")
                 {
                     nbBouteilleRouge += 1;
                 }
