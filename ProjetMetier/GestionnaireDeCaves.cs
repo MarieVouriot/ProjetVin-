@@ -47,12 +47,10 @@ namespace ProjetMetier
         public double ValeurDeLaCave(string unNomDeCave)
         {
             double valeurCave = 0;
-
             foreach(Bouteille bou in LesCaves[unNomDeCave])
             {
                 valeurCave = valeurCave + (bou.QuantiteBouteille * bou.LeVin.PrixDuVin);
             }
-
             return valeurCave;
         }
     }
